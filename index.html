@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FrameX Cinema</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #0d0d0d;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 { color: #e50914; margin: 0; }
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .hero {
+      background: url('https://via.placeholder.com/1200x400') center/cover;
+      padding: 80px 30px;
+      text-align: center;
+    }
+    .hero h2 { font-size: 40px; }
+    .section { padding: 40px 30px; }
+    .movies, .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.7);
+    }
+    .card img { width: 100%; height: 280px; object-fit: cover; }
+    .card-content { padding: 15px; }
+    .btn {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background: #e50914;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .seats {
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 10px;
+      margin-top: 20px;
+      max-width: 400px;
+    }
+    .seat {
+      padding: 10px;
+      background: #444;
+      text-align: center;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .seat.selected { background: #e50914; }
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>FrameX Cinema</h1>
+  <nav>
+    <a href="#cartelera">Cartelera</a>
+    <a href="#asientos">Asientos</a>
+    <a href="#dulceria">Dulcería</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <h2>Vive el cine como nunca</h2>
+  <p>Estrenos, promociones y la mejor experiencia</p>
+  <a class="btn" href="#cartelera">Comprar boletos</a>
+</section>
+
+<section id="cartelera" class="section">
+  <h2>🎬 Cartelera</h2>
+  <div class="movies">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x450" alt="Película">
+      <div class="card-content">
+        <h3>Película Ejemplo</h3>
+        <p>Horario: 7:00 PM</p>
+        <p>Precio: $80 MXN</p>
+        <a class="btn" href="#asientos">Elegir función</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="asientos" class="section">
+  <h2>🪑 Selecciona tu asiento</h2>
+  <p>Pantalla</p>
+  <div class="seats">
+    <div class="seat">A1</div><div class="seat">A2</div><div class="seat">A3</div><div class="seat">A4</div>
+    <div class="seat">B1</div><div class="seat">B2</div><div class="seat">B3</div><div class="seat">B4</div>
+    <div class="seat">C1</div><div class="seat">C2</div><div class="seat">C3</div><div class="seat">C4</div>
+    <div class="seat">D1</div><div class="seat">D2</div><div class="seat">D3</div><div class="seat">D4</div>
+  </div>
+</section>
+
+<section id="dulceria" class="section">
+  <h2>🍿 Dulcería</h2>
+  <div class="products">
+    <div class="card">
+      <img src="https://via.placeholder.com/300x300" alt="Palomitas">
+      <div class="card-content">
+        <h3>Combo Palomitas</h3>
+        <p>$120 MXN</p>
+        <button class="btn">Agregar</button>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/300x300" alt="Nachos">
+      <div class="card-content">
+        <h3>Nachos</h3>
+        <p>$70 MXN</p>
+        <button class="btn">Agregar</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 FrameX Cinema - Proyecto escolar</p>
+</footer>
+
+<script>
+  const seats = document.querySelectorAll('.seat');
+  seats.forEach(seat => {
+    seat.addEventListener('click', () => {
+      seat.classList.toggle('selected');
+    });
+  });
+</script>
+
+</body>
+</html>
